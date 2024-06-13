@@ -1,28 +1,8 @@
 # functionsts
 
-## 1 HTTP
-This sample shows an Azure Function in TypeScript with an http trigger.
+## Introduction
+This is a repository to collect various samples of Azure Functions in TypeScript.
 
-### Build and run locally
-```
-func init --typescript
-func new --name HttpExample --template "HTTP trigger" --authlevel "anonymous"
-npm start
-```
+## Contents
+[1 HTTP](./1http//)
 
-### Deploy to Azure
-```
-region=northeurope
-resourcegroup=functionsts1
-storageaccount=functionsts1sa
-nodeversion=20
-functionapp=functionsts1fa
-az group create --name $resourcegroup --location $region
-az storage account create --name $storageaccount --location $region --resource-group $resourcegroup 
-az functionapp create --resource-group $resourcegroup --consumption-plan-location westeurope --runtime node --runtime-version $nodeversion --functions-version 4 --name $functionapp --os-type linux --storage-account $storageaccount
-func azure functionapp publish $functionapp
-```
-
-[Source](https://learn.microsoft.com/azure/azure-functions/create-first-function-cli-typescript)
-
-[Home](../README.md)
